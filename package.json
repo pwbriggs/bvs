@@ -1,6 +1,18 @@
 {
     "name": "bvs",
-    "private": true,
+    "description": "Better Volunteer Scheduler",
+    "keywords": [
+        "modern",
+        "volunteer management",
+        "webapp"
+    ],
+    "homepage": "https://github.com/pwbriggs/bvs#readme",
+    "bugs": {
+        "url": "https://github.com/pwbriggs/bvs/issues"
+    },
+    "license": "MIT",
+    "author": "Peter Briggs",
+    "repository": "github:pwbriggs/bvs",
     "sideEffects": false,
     "type": "module",
     "scripts": {
