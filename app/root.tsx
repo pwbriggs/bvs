@@ -69,6 +69,7 @@ export function ErrorBoundary() {
             borderRadius: "1em",
         }}>
             {message}
+            <a href="/">Go back to home page</a>
         </div>
     );
 }
