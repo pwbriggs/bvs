@@ -16,6 +16,7 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App() {
+    // noinspection HtmlRequiredTitleElement because title included in <Meta/> element.
     return (
         <html lang="en">
         <head>
