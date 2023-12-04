@@ -2,8 +2,8 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import * as url from "node:url";
 
-import {createRequestHandler} from "@remix-run/express";
-import {broadcastDevReady, installGlobals} from "@remix-run/node";
+import { createRequestHandler } from "@remix-run/express";
+import { broadcastDevReady, installGlobals } from "@remix-run/node";
 import compression from "compression";
 import express from "express";
 import morgan from "morgan";
@@ -36,12 +36,12 @@ app.disable("x-powered-by");
 // Remix fingerprints its assets so we can cache forever.
 app.use(
     "/build",
-    express.static("public/build", {immutable: true, maxAge: "1y"})
+    express.static("public/build", { immutable: true, maxAge: "1y" }),
 );
 
 // Everything else (like favicon.ico) is cached for an hour. You may want to be
 // more aggressive with this caching.
-app.use(express.static("public", {maxAge: "1h"}));
+app.use(express.static("public", { maxAge: "1h" }));
 
 app.use(morgan("tiny"));
 
@@ -85,7 +85,7 @@ async function createDevRequestHandler(initialBuild) {
 
     const chokidar = await import("chokidar");
     chokidar
-        .watch(VERSION_PATH, {ignoreInitial: true})
+        .watch(VERSION_PATH, { ignoreInitial: true })
         .on("add", handleServerUpdate)
         .on("change", handleServerUpdate);
 
