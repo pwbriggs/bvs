@@ -10,6 +10,7 @@ import {
     ScrollRestoration,
     useRouteError,
 } from "@remix-run/react";
+import { SpeedInsights } from "@vercel/speed-insights/remix"
 
 import globalStylesheet from "~/styles/global.css";
 import globalWideStylesheet from "~/styles/global-wide.css";
@@ -47,6 +48,7 @@ export default function App() {
         <ScrollRestoration/>
         <Scripts/>
         <LiveReload/>
+        <SpeedInsights/>
         </body>
         </html>
     );
