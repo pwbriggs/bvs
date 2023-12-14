@@ -1,18 +1,22 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
 import {
     isRouteErrorResponse,
     Links,
     LiveReload,
     Meta,
+    NavLink,
     Outlet,
     Scripts,
     ScrollRestoration,
     useRouteError,
 } from "@remix-run/react";
 
+import globalStylesheet from "~/styles/global.css";
+import globalWideStylesheet from "~/styles/global-wide.css";
+
 export const links: LinksFunction = () => [
-    ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+    { rel: "stylesheet", href: globalStylesheet },
+    { rel: "stylesheet", media: "(min-width: 900px)", href: globalWideStylesheet },
 ];
 
 export default function App() {
@@ -26,7 +30,20 @@ export default function App() {
             <Links/>
         </head>
         <body>
-        <Outlet/>
+        <header className="bvs-header">
+            Better Volunteer Scheduler
+            <nav>
+                <ul>
+                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/my-schedule/">Your Schedule</NavLink></li>
+                    <li><NavLink to="/full-schedule/">Full Schedule</NavLink></li>
+                    <li><NavLink to="/settings/">Settings</NavLink></li>
+                </ul>
+            </nav>
+        </header>
+        <main className="bvs-main">
+            <Outlet/>
+        </main>
         <ScrollRestoration/>
         <Scripts/>
         <LiveReload/>
@@ -61,16 +78,25 @@ export function ErrorBoundary() {
         message = <h1>Unknown Error</h1>;
     }
     return (
-        <div style={{
-            backgroundColor: "#fce4e4",
-            fontFamily: '"Segoe UI", sans-serif',
-            color: "darkred",
-            margin: "1em",
-            padding: "2rem",
-            borderRadius: "1em",
-        }}>
-            {message}
-            <a href="/">Go back to home page</a>
-        </div>
+        <html>
+            <head>
+                <title>Oh no!</title>
+                <meta charSet="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            </head>
+            <body>
+                <div style={{
+                    backgroundColor: "#fce4e4",
+                    fontFamily: '"Segoe UI", sans-serif',
+                    color: "darkred",
+                    margin: "1em",
+                    padding: "2rem",
+                    borderRadius: "1em",
+                }}>
+                    {message}
+                    <a href="/">Go back to home page</a>
+                </div>
+            </body>
+        </html>
     );
 }
