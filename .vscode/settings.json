@@ -1,0 +1,9 @@
+{
+    "conventionalCommits.scopes": [
+        "deps",
+        "deps-dev",
+        "seo",
+        "ide",
+        "metadata"
+    ]
+}

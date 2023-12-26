@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"problemMatcher": [],
+			"label": "npm: dev",
+			"detail": "remix dev --manual -c \"node --watch-path server.js --watch server.js\"",
+			"presentation": {
+			  "reveal": "never",
+			  "panel": "dedicated"
+			},
+			"runOptions": { "runOn": "folderOpen" }
+		}
+	]
+}
