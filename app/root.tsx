@@ -15,6 +15,7 @@ import { SpeedInsights } from "@vercel/speed-insights/remix"
 
 import faviconSvg from "~/images/favicon.svg";
 
+import logo from "~/images/icon.svg";
 import invertedLogo from "~/images/icon-inverted.svg";
 import githubLogoSvgForLight from "~/images/github-mark.svg";
 import githubLogoPngForLight from "~/images/github-mark.png";
@@ -127,6 +128,14 @@ export function ErrorBoundary() {
                     padding: "2rem",
                     borderRadius: "1em",
                 }}>
+                    <div style={{
+                        color: "black",
+                        display: "flex",
+                        gap: "0.5em",
+                        alignItems: "center",
+                    }}>
+                        <img src={logo} style={{width: "2em"}}/> Better Volunteer Scheduler
+                    </div>
                     {message}
                     <a href="/">Go back to home page</a>
                 </div>
