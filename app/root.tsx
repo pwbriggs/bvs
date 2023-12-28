@@ -13,6 +13,8 @@ import {
 } from "@remix-run/react";
 import { SpeedInsights } from "@vercel/speed-insights/remix"
 
+import faviconSvg from "~/images/favicon.svg";
+
 import globalStylesheet from "~/styles/global.css";
 import globalWideStylesheet from "~/styles/global-wide.css";
 import githubLogoSvgForLight from "~/images/github-mark.svg";
@@ -23,6 +25,7 @@ import githubLogoPngForDark from "~/images/github-mark-white.png";
 export const links: LinksFunction = () => [
     { rel: "stylesheet", href: globalStylesheet },
     { rel: "stylesheet", media: "(min-width: 900px)", href: globalWideStylesheet },
+    { rel: "icon", type: "image/svg+xml", sizes: "any", href: faviconSvg}
 ];
 
 export default function App() {
