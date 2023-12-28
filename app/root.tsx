@@ -1,6 +1,7 @@
 import type { LinksFunction } from "@remix-run/node";
 import {
     isRouteErrorResponse,
+    Link,
     Links,
     LiveReload,
     Meta,
@@ -14,6 +15,10 @@ import { SpeedInsights } from "@vercel/speed-insights/remix"
 
 import globalStylesheet from "~/styles/global.css";
 import globalWideStylesheet from "~/styles/global-wide.css";
+import githubLogoSvgForLight from "~/images/github-mark.svg";
+import githubLogoPngForLight from "~/images/github-mark.png";
+import githubLogoSvgForDark from "~/images/github-mark-white.svg";
+import githubLogoPngForDark from "~/images/github-mark-white.png";
 
 export const links: LinksFunction = () => [
     { rel: "stylesheet", href: globalStylesheet },
@@ -45,6 +50,25 @@ export default function App() {
         <main className="bvs-main">
             <Outlet/>
         </main>
+        <footer className="bvs-footer">
+            This is a free and open-source webapp licensed under the MIT License. View the source or
+            file an issue on
+            <Link to="https://github.com/pwbriggs/bvs">
+                <picture>
+                    <source
+                        media="prefers-color-scheme: dark"
+                        src={githubLogoPngForDark}
+                        srcSet={githubLogoSvgForDark}
+                    />
+                    <img
+                        src={githubLogoPngForLight}
+                        srcSet={githubLogoSvgForLight}
+                        className="github-logo"
+                    />
+                </picture>
+                <span className="underline">GitHub</span>
+            </Link>
+        </footer>
         <ScrollRestoration/>
         <Scripts/>
         <LiveReload/>

@@ -26,3 +26,26 @@ main.bvs-main {
     padding: var(--edge-padding);
     flex-grow: 1;
 }
+
+footer.bvs-footer {
+    padding: var(--edge-padding);
+    text-align: center;
+    font-family: Constantia;
+}
+
+footer.bvs-footer img.github-logo {
+    width: 1em;
+    height: 1em;
+    margin: 0 .2em 0 .5em;
+    vertical-align: text-top;
+}
+
+footer.bvs-footer a {
+    font-weight: bold;
+    text-decoration: unset;
+    color: unset;
+}
+
+footer.bvs-footer a .underline {
+    text-decoration: underline;
+}
