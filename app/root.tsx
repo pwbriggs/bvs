@@ -44,7 +44,7 @@ export default function App() {
         <body>
         <header className="bvs-header">
             <h1>
-                <img src={invertedLogo}/>
+                <img src={invertedLogo} alt=""/>
                 Better Volunteer Scheduler
             </h1>
             <nav>
@@ -73,6 +73,7 @@ export default function App() {
                         src={githubLogoPngForLight}
                         srcSet={githubLogoSvgForLight}
                         className="github-logo"
+                        alt=""
                     />
                 </picture>
                 <span className="underline">GitHub</span>
@@ -134,7 +135,7 @@ export function ErrorBoundary() {
                         gap: "0.5em",
                         alignItems: "center",
                     }}>
-                        <img src={logo} style={{width: "2em"}}/> Better Volunteer Scheduler
+                        <img src={logo} style={{width: "2em"}} alt=""/> Better Volunteer Scheduler
                     </div>
                     {message}
                     <a href="/">Go back to home page</a>

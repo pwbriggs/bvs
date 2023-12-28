@@ -5,6 +5,7 @@
         "seo",
         "ide",
         "metadata",
-        "ui"
+        "ui",
+        "a11y"
     ]
 }
