@@ -15,12 +15,14 @@ import { SpeedInsights } from "@vercel/speed-insights/remix"
 
 import faviconSvg from "~/images/favicon.svg";
 
-import globalStylesheet from "~/styles/global.css";
-import globalWideStylesheet from "~/styles/global-wide.css";
+import invertedLogo from "~/images/icon-inverted.svg";
 import githubLogoSvgForLight from "~/images/github-mark.svg";
 import githubLogoPngForLight from "~/images/github-mark.png";
 import githubLogoSvgForDark from "~/images/github-mark-white.svg";
 import githubLogoPngForDark from "~/images/github-mark-white.png";
+
+import globalStylesheet from "~/styles/global.css";
+import globalWideStylesheet from "~/styles/global-wide.css";
 
 export const links: LinksFunction = () => [
     { rel: "stylesheet", href: globalStylesheet },
@@ -40,7 +42,10 @@ export default function App() {
         </head>
         <body>
         <header className="bvs-header">
-            Better Volunteer Scheduler
+            <h1>
+                <img src={invertedLogo}/>
+                Better Volunteer Scheduler
+            </h1>
             <nav>
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>

@@ -4,6 +4,7 @@
         "deps-dev",
         "seo",
         "ide",
-        "metadata"
+        "metadata",
+        "ui"
     ]
 }
