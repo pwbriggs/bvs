@@ -1,9 +1,12 @@
+:root {
+    --edge-padding: 1rem
+}
+
 header.bvs-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: 0 1rem;
 }
 
 header.bvs-header > nav ul {
@@ -18,7 +21,7 @@ header.bvs-header > nav ul li {
 
 header.bvs-header > nav a {
     display: inline-block;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem var(--edge-padding);
     text-decoration: none;
     font-weight: bold;
 }
@@ -27,6 +30,6 @@ header.bvs-header > nav a.active {
     border-bottom: 0.2rem solid;
 }
 
-main.bvs-main {
-    margin: 1rem;
+footer.bvs-footer {
+    font-size: 10pt;
 }

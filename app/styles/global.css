@@ -4,15 +4,25 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
 }
 
 header.bvs-header {
     background-color: #008;
     color: white;
     border-bottom: 1px solid dimGray;
+    padding: 0 var(--edge-padding);
 }
 
 header.bvs-header > nav a {
     color: white;
+}
+
+main.bvs-main {
+    padding: var(--edge-padding);
+    flex-grow: 1;
 }
