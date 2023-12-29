@@ -66,8 +66,7 @@ export default function App() {
                 <picture>
                     <source
                         media="prefers-color-scheme: dark"
-                        src={githubLogoPngForDark}
-                        srcSet={githubLogoSvgForDark}
+                        srcSet={`${githubLogoPngForDark}, ${githubLogoSvgForDark}`}
                     />
                     <img
                         src={githubLogoPngForLight}
