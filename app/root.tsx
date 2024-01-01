@@ -155,7 +155,7 @@ export function ErrorBoundary() {
                     <p>
                         We try as hard as possible to keep everything bug-free and running smoothly,
                         but sometimes errors such as this one slip through. Sorry for the
-                        inconvenience! 
+                        inconvenience!
                     </p>
                     <p style={{fontStyle: "italic"}}>
                         If this error persists and you believe something is wrong, please file an
