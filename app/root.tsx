@@ -88,40 +88,42 @@ export default function App() {
 }
 
 export function ErrorBoundary() {
-    const error = useRouteError();
+    const error: any = useRouteError();
     let message;
+    let title = "Internal error | BVS";
 
     if (isRouteErrorResponse(error)) {
+        title = `${error.status} ${error.statusText} | BVS`;
         message = (
             <>
                 <h1>
                     {error.status} {error.statusText}
                 </h1>
-                <p>{error.data}</p>
+                <pre>{error.data}</pre>
             </>
         );
     } else if (error instanceof Error) {
         message = (
             <>
-                <h1>Error</h1>
+                <h1>😬 Internal error</h1>
                 <p>{error.message}</p>
                 <p>The stack trace is:</p>
                 <pre>{error.stack}</pre>
             </>
         );
     } else {
-        message = <h1>Unknown Error</h1>;
+        message = <h1>😬 Unknown internal error</h1>;
     }
     return (
         <html>
             <head>
-                <title>Oh no!</title>
+                <title>{title}</title>
                 <meta charSet="utf-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
             </head>
             <body>
                 <div style={{
-                    backgroundColor: "#fce4e4",
+                    backgroundColor: "hsl(0 90% 95%)",
                     fontFamily: '"Segoe UI", sans-serif',
                     color: "darkred",
                     margin: "1em",
@@ -137,7 +139,28 @@ export function ErrorBoundary() {
                         <img src={logo} style={{width: "2em"}} alt=""/> Better Volunteer Scheduler
                     </div>
                     {message}
-                    <a href="/">Go back to home page</a>
+                    <a href="/" style={{
+                        color: "black",
+                        backgroundColor: "hsl(0 90% 90%)",
+                        textDecoration: "none",
+                        display: "inline-block",
+                        padding: "1em",
+                        margin: "1em 0",
+                        border: "3px solid darkRed",
+                        borderRadius: "1em",
+                        fontWeight: "bold"
+                    }}>
+                        &larr; Go back to home page
+                    </a>
+                    <p>
+                        We try as hard as possible to keep everything bug-free and running smoothly,
+                        but sometimes errors such as this one slip through. Sorry for the
+                        inconvenience! 
+                    </p>
+                    <p style={{fontStyle: "italic"}}>
+                        If this error persists and you believe something is wrong, please file an
+                        issue on <Link to="https://github.com/pwbriggs/bvs/issues">GitHub</Link>.
+                    </p>
                 </div>
             </body>
         </html>
