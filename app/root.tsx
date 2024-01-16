@@ -51,7 +51,7 @@ export default function App() {
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/my-schedule/">Your Schedule</NavLink></li>
-                    <li><NavLink to="/full-schedule/">Full Schedule</NavLink></li>
+                    <li><NavLink to="/events/">All Events</NavLink></li>
                     <li><NavLink to="/settings/">Settings</NavLink></li>
                 </ul>
             </nav>

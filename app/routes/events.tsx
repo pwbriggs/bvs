@@ -2,13 +2,13 @@ import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
     return [
-        { title: "Full Schedule | BVS" },
+        { title: "All Events | BVS" },
         { name: "description", content: "Full event and volunteer schedule" },
     ];
 };
 
-export default function MySchedule() {
+export default function EventsList() {
     return (
-        <h1>Full Schedule</h1>
+        <h1>All Events</h1>
     );
 }
