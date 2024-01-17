@@ -5,8 +5,6 @@ import {
     Links,
     LiveReload,
     Meta,
-    NavLink,
-    Outlet,
     Scripts,
     ScrollRestoration,
     useRouteError,
@@ -16,73 +14,69 @@ import { SpeedInsights } from "@vercel/speed-insights/remix"
 import faviconSvg from "~/images/favicon.svg";
 
 import logo from "~/images/icon.svg";
-import invertedLogo from "~/images/icon-inverted.svg";
-import githubLogoSvgForLight from "~/images/github-mark.svg";
-import githubLogoPngForLight from "~/images/github-mark.png";
-import githubLogoSvgForDark from "~/images/github-mark-white.svg";
-import githubLogoPngForDark from "~/images/github-mark-white.png";
-
-import globalStylesheet from "~/styles/global.css";
-import globalWideStylesheet from "~/styles/global-wide.css";
 
 export const links: LinksFunction = () => [
-    { rel: "stylesheet", href: globalStylesheet },
-    { rel: "stylesheet", media: "(min-width: 900px)", href: globalWideStylesheet },
-    { rel: "icon", type: "image/svg+xml", sizes: "any", href: faviconSvg}
+    { rel: "icon", type: "image/svg+xml", sizes: "any", href: faviconSvg }
 ];
 
 export default function App() {
-    // noinspection HtmlRequiredTitleElement because title included in <Meta/> element.
     return (
         <html lang="en">
-        <head>
-            <meta charSet="utf-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-            <Meta/>
-            <Links/>
-        </head>
-        <body>
-        <header className="bvs-header">
-            <h1>
-                <img src={invertedLogo} alt=""/>
-                Better Volunteer Scheduler
-            </h1>
-            <nav>
-                <ul>
-                    <li><NavLink to="/">Home</NavLink></li>
-                    <li><NavLink to="/my-schedule/">Your Schedule</NavLink></li>
-                    <li><NavLink to="/events/">All Events</NavLink></li>
-                    <li><NavLink to="/settings/">Settings</NavLink></li>
-                </ul>
-            </nav>
-        </header>
-        <main className="bvs-main">
-            <Outlet/>
-        </main>
-        <footer className="bvs-footer">
-            This is a free and open-source webapp licensed under the MIT License. View the source or
-            file an issue on
-            <Link to="https://github.com/pwbriggs/bvs">
-                <picture>
-                    <source
-                        media="prefers-color-scheme: dark"
-                        srcSet={`${githubLogoPngForDark}, ${githubLogoSvgForDark}`}
-                    />
-                    <img
-                        src={githubLogoPngForLight}
-                        srcSet={githubLogoSvgForLight}
-                        className="github-logo"
-                        alt=""
-                    />
-                </picture>
-                <span className="underline">GitHub</span>
-            </Link>
-        </footer>
-        <ScrollRestoration/>
-        <Scripts/>
-        <LiveReload/>
-        <SpeedInsights/>
-        </body>
+            <head>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <title>🚧 Under Construction | BVS</title>
+                <Links />
+            </head>
+            <body style={{ backgroundColor: "hsl(30 90% 90%)" }}>
+                <div style={{
+                    fontFamily: '"Segoe UI", sans-serif',
+                    color: "darkred",
+                    margin: "1em",
+                    padding: "2rem",
+                }}>
+                    <div style={{
+                        color: "black",
+                        display: "flex",
+                        gap: "0.5em",
+                        alignItems: "center",
+                    }}>
+                        <img src={logo} style={{ width: "2em" }} alt="" /> Better Volunteer Scheduler
+                    </div>
+                    <h1>🚧 Under construction</h1>
+                    <p>
+                        Sorry, we're still actively building this app. Check again soon!
+                    </p>
+                    <p>
+                        You can watch the development in action (or even do a little work yourself)
+                        on <Link to="https://github.com/pwbriggs/bvs">GitHub</Link>.
+                    </p>
+                    <div style={{ display: "flex", gap: "0.5rem" }}>
+                        <a href="https://github.com/pwbriggs/bvs/commits/dev/">
+                            <img
+                                alt="GitHub commit activity"
+                                src="https://img.shields.io/github/commit-activity/m/pwbriggs/bvs?logo=github"
+                            />
+                        </a>
+                        <a href="https://github.com/pwbriggs/bvs/commits/dev/">
+                            <img
+                                alt="GitHub last commit (branch)"
+                                src="https://img.shields.io/github/last-commit/pwbriggs/bvs/dev?logo=github"
+                            />
+                        </a>
+                        <a href="https://github.com/pwbriggs/bvs">
+                            <img
+                                alt="See the source on GitHub"
+                                src="https://img.shields.io/badge/see_the_source_on-github-red?logo=github"
+                            />
+                        </a>
+                    </div>
+                </div>
+                <ScrollRestoration />
+                <Scripts />
+                <LiveReload />
+                <SpeedInsights />
+            </body>
         </html>
     );
 }
@@ -118,8 +112,8 @@ export function ErrorBoundary() {
         <html>
             <head>
                 <title>{title}</title>
-                <meta charSet="utf-8"/>
-                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
             </head>
             <body>
                 <div style={{
@@ -136,7 +130,7 @@ export function ErrorBoundary() {
                         gap: "0.5em",
                         alignItems: "center",
                     }}>
-                        <img src={logo} style={{width: "2em"}} alt=""/> Better Volunteer Scheduler
+                        <img src={logo} style={{ width: "2em" }} alt="" /> Better Volunteer Scheduler
                     </div>
                     {message}
                     <a href="/" style={{
@@ -157,7 +151,7 @@ export function ErrorBoundary() {
                         but sometimes errors such as this one slip through. Sorry for the
                         inconvenience!
                     </p>
-                    <p style={{fontStyle: "italic"}}>
+                    <p style={{ fontStyle: "italic" }}>
                         If this error persists and you believe something is wrong, please file an
                         issue on <Link to="https://github.com/pwbriggs/bvs/issues">GitHub</Link>.
                     </p>
