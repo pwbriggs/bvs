@@ -41,7 +41,7 @@ export default function App() {
                         gap: "0.5em",
                         alignItems: "center",
                     }}>
-                        <img src={logo} style={{ width: "2em" }} alt="" /> Better Volunteer Scheduler
+                        <img src={logo} style={{ height: "2em", width: "2em" }} alt="" /> Better Volunteer Scheduler
                     </div>
                     <h1>🚧 Under construction</h1>
                     <p>
@@ -130,7 +130,7 @@ export function ErrorBoundary() {
                         gap: "0.5em",
                         alignItems: "center",
                     }}>
-                        <img src={logo} style={{ width: "2em" }} alt="" /> Better Volunteer Scheduler
+                        <img src={logo} style={{ height: "2em", width: "2em" }} alt="" /> Better Volunteer Scheduler
                     </div>
                     {message}
                     <a href="/" style={{
