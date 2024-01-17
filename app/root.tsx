@@ -28,49 +28,47 @@ export default function App() {
                 <title>🚧 Under Construction | BVS</title>
                 <Links />
             </head>
-            <body style={{ backgroundColor: "hsl(30 90% 90%)" }}>
+            <body style={{
+                backgroundColor: "hsl(30 90% 90%)",
+                fontFamily: '"Segoe UI", sans-serif',
+                color: "darkred",
+                padding: "1rem"
+            }}>
                 <div style={{
-                    fontFamily: '"Segoe UI", sans-serif',
-                    color: "darkred",
-                    margin: "1em",
-                    padding: "2rem",
+                    color: "black",
+                    display: "flex",
+                    gap: "0.5em",
+                    alignItems: "center",
                 }}>
-                    <div style={{
-                        color: "black",
-                        display: "flex",
-                        gap: "0.5em",
-                        alignItems: "center",
-                    }}>
-                        <img src={logo} style={{ height: "2em", width: "2em" }} alt="" /> Better Volunteer Scheduler
-                    </div>
-                    <h1>🚧 Under construction</h1>
-                    <p>
-                        Sorry, we're still actively building this app. Check again soon!
-                    </p>
-                    <p>
-                        You can watch the development in action (or even do a little work yourself)
-                        on <Link to="https://github.com/pwbriggs/bvs">GitHub</Link>.
-                    </p>
-                    <div style={{ display: "flex", gap: "0.5rem" }}>
-                        <a href="https://github.com/pwbriggs/bvs/commits/dev/">
-                            <img
-                                alt="GitHub commit activity"
-                                src="https://img.shields.io/github/commit-activity/m/pwbriggs/bvs?logo=github"
-                            />
-                        </a>
-                        <a href="https://github.com/pwbriggs/bvs/commits/dev/">
-                            <img
-                                alt="GitHub last commit (branch)"
-                                src="https://img.shields.io/github/last-commit/pwbriggs/bvs/dev?logo=github"
-                            />
-                        </a>
-                        <a href="https://github.com/pwbriggs/bvs">
-                            <img
-                                alt="See the source on GitHub"
-                                src="https://img.shields.io/badge/see_the_source_on-github-red?logo=github"
-                            />
-                        </a>
-                    </div>
+                    <img src={logo} style={{ height: "2em", width: "2em" }} alt="" /> Better Volunteer Scheduler
+                </div>
+                <h1>🚧 Under construction</h1>
+                <p>
+                    Sorry, we're still actively building this app. Check again soon!
+                </p>
+                <p>
+                    You can watch the development in action (or even do a little work yourself)
+                    on <Link to="https://github.com/pwbriggs/bvs">GitHub</Link>.
+                </p>
+                <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                    <a href="https://github.com/pwbriggs/bvs/commits/dev/">
+                        <img
+                            alt="GitHub commit activity"
+                            src="https://img.shields.io/github/commit-activity/m/pwbriggs/bvs?logo=github"
+                        />
+                    </a>
+                    <a href="https://github.com/pwbriggs/bvs/commits/dev/">
+                        <img
+                            alt="GitHub last commit (branch)"
+                            src="https://img.shields.io/github/last-commit/pwbriggs/bvs/dev?logo=github"
+                        />
+                    </a>
+                    <a href="https://github.com/pwbriggs/bvs">
+                        <img
+                            alt="See the source on GitHub"
+                            src="https://img.shields.io/badge/see_the_source_on-github-red?logo=github"
+                        />
+                    </a>
                 </div>
                 <ScrollRestoration />
                 <Scripts />
