@@ -6,7 +6,6 @@
         "ide",
         "metadata",
         "ui",
-        "a11y",
-        "database"
+        "a11y"
     ]
 }

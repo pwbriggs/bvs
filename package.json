@@ -17,9 +17,7 @@
     "type": "module",
     "scripts": {
         "build": "remix build",
-        "dev": "concurrently \"npm:remixDev\" \"npm:devDb\"",
-        "devDb": "postgres -D .dev_db",
-        "remixDev": "remix dev --manual -c \"node --watch-path server.js --watch server.js\"",
+        "dev": "remix dev --manual -c \"node --watch-path server.js --watch server.js\"",
         "start": "cross-env NODE_ENV=production node ./server.js",
         "typecheck": "tsc"
     },
@@ -47,9 +45,7 @@
         "@types/react-dom": "^18.2.19",
         "@types/source-map-support": "^0.5.6",
         "chokidar": "^3.6.0",
-        "concurrently": "^8.2.2",
         "eslint": "^8.56.0",
-        "prisma": "^5.9.1",
         "typescript": "^5.3.3"
     },
     "engines": {
