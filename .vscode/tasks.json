@@ -12,6 +12,17 @@
 			  "panel": "dedicated"
 			},
 			"runOptions": { "runOn": "folderOpen" }
-		}
+		},
+        {
+            "label": "Init dev database",
+            "detail": "Requires PostgreSQL to be installed and initdb in path",
+            "type": "shell",
+            "command": "initdb -D .dev_db -U bvs_app -E UTF8"
+			// ^ So the URL in .env might look something like this:
+			// DATABASE_URL="postgresql://bvs_app@localhost:5432/bvs?schema=public"
+
+            // Also note that, in production, the app probably shouldn't be a database superuser. It
+			// just simplifies things here.
+        }
 	]
 }
