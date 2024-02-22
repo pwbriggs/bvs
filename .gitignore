@@ -7,6 +7,12 @@ node_modules
 .vercel
 /.dev_db
 
+### Playwright ###
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
 ### The entries below are sourced from https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
