@@ -29,7 +29,7 @@
         "@vercel/speed-insights": "^1.0.10",
         "compression": "^1.7.4",
         "cross-env": "^7.0.3",
-        "express": "^4.18.2",
+        "express": "^4.18.3",
         "isbot": "^4",
         "morgan": "^1.10.0",
         "react": "^18.2.0",
