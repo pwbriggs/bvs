@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id             Int                 @id @default(autoincrement())
+    username       String
+    approvedRoles  Role[]              @relation("roleMember")
+    managingRoles  Role[]              @relation("roleManager")
+    permissionSets UserPermissionSet[]
+    positions      Position[]
+}
+
+enum UserPermissionSet {
+    ROOT
+    ADMIN
+    MANAGE_ALL_ROLES
+    DELETE_USER
+    MODIFY_USER
+    CREATE_USER
+    DELETE_EVENT
+    MODIFY_EVENT
+    CREATE_EVENT
+}
+
+model Role {
+    id            Int        @id @default(autoincrement())
+    name          String /// For URLs etc.
+    displayName   String
+    approvedUsers User[]     @relation("roleMember")
+    managers      User[]     @relation("roleManager")
+    positions     Position[]
+}
+
+model Position {
+    id      Int   @id @default(autoincrement())
+    role    Role  @relation(fields: [roleId], references: [id])
+    roleId  Int
+    user    User? @relation(fields: [userId], references: [id])
+    userId  Int?
+    event   Event @relation(fields: [eventId], references: [id])
+    eventId Int
+}
+
+model Event {
+    id          Int        @id @default(autoincrement())
+    title       String
+    description String?
+    published   Boolean    @default(false)
+    startTime   DateTime
+    duration    Int        @default(3600) /// Event duration in sec
+    positions   Position[]
+}
