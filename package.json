@@ -25,6 +25,7 @@
         "test": "playwright test"
     },
     "dependencies": {
+        "@prisma/client": "^5.9.1",
         "@remix-run/express": "^2.8.0",
         "@remix-run/node": "^2.8.0",
         "@remix-run/react": "^2.8.0",
