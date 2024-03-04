@@ -17,6 +17,7 @@
     "type": "module",
     "scripts": {
         "build": "remix build",
+        "postinstall": "prisma generate",
         "dev": "concurrently \"npm:remixDev\" \"npm:devDb\"",
         "devDb": "postgres -D .dev_db",
         "remixDev": "remix dev --manual -c \"node --watch-path server.js --watch server.js\"",
