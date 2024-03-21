@@ -17,6 +17,7 @@ model User {
     managingRoles  Role[]              @relation("roleManager")
     permissionSets UserPermissionSet[]
     positions      Position[]
+    Cred           Cred[]
 }
 
 enum UserPermissionSet {
@@ -29,6 +30,25 @@ enum UserPermissionSet {
     DELETE_EVENT
     MODIFY_EVENT
     CREATE_EVENT
+}
+
+model Cred {
+    id      Int      @id @default(autoincrement())
+    user    User     @relation(fields: [userId], references: [id])
+    userId  Int
+    type    CredType
+    cred    Json
+    created DateTime @default(now())
+}
+
+enum CredType {
+    USERNAME_PASSWORD
+}
+
+/// A session on the website
+model Session {
+    id   String @id
+    data Json
 }
 
 model Role {

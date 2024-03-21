@@ -13,6 +13,8 @@ import {
 } from "@remix-run/react";
 import { SpeedInsights } from "@vercel/speed-insights/remix"
 
+import { ProfileMenu } from "~/components/profile";
+
 import faviconSvg from "~/images/favicon.svg";
 
 import logo from "~/images/icon.svg";
@@ -53,6 +55,7 @@ export default function App() {
                     <li><NavLink to="/my-schedule/" prefetch="intent">Your Schedule</NavLink></li>
                     <li><NavLink to="/events/" prefetch="intent">All Events</NavLink></li>
                     <li><NavLink to="/settings/">Settings</NavLink></li>
+                    <li><ProfileMenu /></li>
                 </ul>
             </nav>
         </header>
