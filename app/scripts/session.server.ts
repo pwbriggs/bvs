@@ -1,3 +1,4 @@
+import { prisma } from "~/scripts/prisma.server";
 import { createSessionStorage } from "@remix-run/node";
 
 export type Session = {
