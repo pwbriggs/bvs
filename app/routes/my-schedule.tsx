@@ -12,7 +12,7 @@ export const meta: MetaFunction = () => {
 export async function loader({ request }: LoaderFunctionArgs) {
     // If the user is already authenticated redirect to home
     return await authenticator.isAuthenticated(request, {
-        failureRedirect: "/login?next=https://google.com/my-schedule",
+        failureRedirect: "/login?next=/my-schedule",
     });
 }
 
