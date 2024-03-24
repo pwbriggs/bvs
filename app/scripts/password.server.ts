@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs";
-import { userExists } from "./accounts.server";
+import { usernameExists } from "./accounts.server";
 
 import type { Cred } from "@prisma/client";
 import type { Session } from "~/scripts/session.server";
@@ -10,7 +10,7 @@ export async function usernamePasswordLogin(
     passwordCreds: Cred[]
 ) {
     if (passwordCreds.length == 0) {
-        if (!await userExists(username)) {
+        if (!await usernameExists(username)) {
             throw new Error("badUsername");
         }
         throw new Error("noPasswords");
