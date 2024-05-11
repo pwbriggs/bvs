@@ -1,9 +1,10 @@
 import { prisma } from "~/scripts/prisma.server";
 import { createSessionStorage } from "@remix-run/node";
+import type { User } from "@prisma/client";
 
 export type Session = {
-    username: string
-}
+    user: User
+};
 
 function databaseSessionStorage(cookie: any) {
     return createSessionStorage({
