@@ -24,10 +24,11 @@ header.bvs-header > nav a {
     padding: 0.8rem var(--edge-padding);
     text-decoration: none;
     font-weight: bold;
+    border-bottom: 0.2rem solid transparent;
 }
 
 header.bvs-header > nav a.active {
-    border-bottom: 0.2rem solid;
+    border-bottom-color: white;
 }
 
 footer.bvs-footer {
