@@ -30,7 +30,7 @@
         "@remix-run/express": "^2.9.2",
         "@remix-run/node": "^2.9.2",
         "@remix-run/react": "^2.9.2",
-        "@vercel/remix": "^2.9.2",
+        "@vercel/remix": "^2.9.2-patch.2",
         "@vercel/speed-insights": "^1.0.10",
         "compression": "^1.7.4",
         "cross-env": "^7.0.3",
