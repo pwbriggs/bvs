@@ -23,7 +23,8 @@
         "remixDev": "remix dev --manual -c \"node --watch-path server.js --watch server.js\"",
         "start": "cross-env NODE_ENV=production node ./server.js",
         "typecheck": "tsc",
-        "test": "playwright test"
+        "test": "playwright test",
+        "playwright": "playwright"
     },
     "dependencies": {
         "@prisma/client": "^5.16.1",

@@ -12,11 +12,11 @@ jobs:
       with:
         node-version: 20
     - name: Install dependencies
-      run: npm ci
+      run: pnpm install
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: pnpm playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      run: pnpm test
       env:
         DEPLOYMENT_URL: ${{ github.event.deployment_status.environment_url }}
     - uses: actions/upload-artifact@v4
